@@ -24,44 +24,48 @@ spiritual = ['"Challenging the meaning of life is the truest expression of the s
 '"We are members of a vast cosmic orchestra in which each living instrument is essential to the complementary and harmonious playing of the whole." - J. Allen Boone',
 '"What lies behind us and what lies before us are tiny matters compared to what lies within us." - Ralph Waldo Emerson', 
 '"There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle. - Albert Einstein',
-'"Step out of the circle of time and into the circle of love." - Rumi', '"It is difficult to find happiness in oneself but it is impossible to find it anywhere else." - Schopenhauer']
+'"Step out of the circle of time and into the circle of love." - Rumi', '"It is difficult to find happiness in oneself but it is impossible to find it anywhere else." - Schopenhauer',
+'"I believe in God, but not as one thing, not as an old man in the sky. I believe that what people call God is something in all of us." - John Lennon',
+'"The possession of knowledge does not kill the sense of wonder and mystery. There is always more mystery." - Anais Nin',
+'"How hurtful it can be to deny one\'s true self and live a life of lies just to appease others." - June Ahern', '"I\'m not afraid of death because I don\'t believe in it. It\'s just getting out of one car and into another." - John Lennon',
+'"We are not human beings having a spiritual experience. We are spiritual beings having a human experience." - Pierre Teilhard de Chardin','"Re-examine all you have been told. Dismiss what insults your soul." - Walt Whitman']
 
 def menu_choice():
-	print "Welcome to my quote generator!"
+	print "Welcome! Enter 1, 2 or 3 for the type of quote you'd like to see"
 	print "1 - Motivational"
 	print "2 - Inspirational"
 	print "3 - Spiritual"
-	choice = int(raw_input("Enter 1, 2 or 3 for the type of quote you'd like to see\nPress enter to generate quotes or input any key to return to this menu"))
+	choice = raw_input("Keep pressing enter to generate quotes\nEnter any key to return to this menu\nEnter 'x' to exit")
 	return choice
 
 
 def main():
 	choice = menu_choice()
 	while True:
-		if choice == 1:
+		if choice == "1":
 			print (random.choice(motivational))
 			continue_choice = raw_input("")
 			if continue_choice == "":
-				choice == 1
+				choice == "1"
 			else:
 				choice = menu_choice()
-		elif choice == 2:
+		elif choice == "2":
 			print (random.choice(inspirational))
 			continue_choice = raw_input("")
 			if continue_choice == "":
-				choice == 2
+				choice == "2"
 			else:
 				choice = menu_choice()
-		elif choice == 3:
+		elif choice == "3":
 			print (random.choice(spiritual))
 			continue_choice = raw_input("")
 			if continue_choice == "":
-				choice == 3
+				choice == "3"
 			else:
 				choice = menu_choice()
-
+		elif choice == "x":
+			break
 
 if __name__ == '__main__':
 	main()
-
 
