@@ -30,42 +30,56 @@ spiritual = ['"Challenging the meaning of life is the truest expression of the s
 '"How hurtful it can be to deny one\'s true self and live a life of lies just to appease others." - June Ahern', '"I\'m not afraid of death because I don\'t believe in it. It\'s just getting out of one car and into another." - John Lennon',
 '"We are not human beings having a spiritual experience. We are spiritual beings having a human experience." - Pierre Teilhard de Chardin','"Re-examine all you have been told. Dismiss what insults your soul." - Walt Whitman']
 
-def menu_choice():
-	print "Welcome! Enter 1, 2 or 3 for the type of quote you'd like to see"
+def main_menu():
+	print "Welcome to my feel-good quote generator!"
 	print "1 - Motivational"
 	print "2 - Inspirational"
 	print "3 - Spiritual"
-	choice = raw_input("Keep pressing enter to generate quotes\nEnter any key to return to this menu\nEnter 'x' to exit")
+	print "Keep pressing enter to generate quotes\nPress any key to return to this menu\nPress 'x' to exit"
+	choice = raw_input("Enter 1-3: ")
 	return choice
 
 
 def main():
-	choice = menu_choice()
+	choice = main_menu()
+	
 	while True:
 		if choice == "1":
 			print (random.choice(motivational))
-			continue_choice = raw_input("")
-			if continue_choice == "":
+			motivational_choice = raw_input("")
+			if motivational_choice == "":
 				choice == "1"
+			elif motivational_choice == "x":
+				break
 			else:
-				choice = menu_choice()
+				main_menu()
+				
 		elif choice == "2":
 			print (random.choice(inspirational))
-			continue_choice = raw_input("")
-			if continue_choice == "":
-				choice == "2"
+			inspirational_choice = raw_input("")
+			if inspirational_choice == "":
+				choice == 2
+			elif inspirational_choice == "x":
+				break
 			else:
-				choice = menu_choice()
+				main_menu()
+				
 		elif choice == "3":
 			print (random.choice(spiritual))
-			continue_choice = raw_input("")
-			if continue_choice == "":
+			spiritual_choice = raw_input("")
+			if spiritual_choice == "":
 				choice == "3"
+			elif spiritual_choice == "x":
+				break
 			else:
-				choice = menu_choice()
+				main_menu()
+
 		elif choice == "x":
 			break
+			
+		else:
+			main_menu()
+			
 
 if __name__ == '__main__':
 	main()
-
